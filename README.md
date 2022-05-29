@@ -3,7 +3,7 @@ it is a project that i have done in 2020 12th class
 
 # Library Management.py is the main file and it is necessary to download this
 ```answer
-please change the password from bittoo123! to your mysql server password that u have created otherwise there is a error
+please change the password from mysql_password! to your mysql server password that u have created otherwise there is a error
 ```
 
 
