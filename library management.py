@@ -1,7 +1,7 @@
 
 import mysql.connector
 
-cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!")
+cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!")
 cursor=cnx.cursor()
 query=("CREATE DATABASE library")
 cursor.execute(query)
