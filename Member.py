@@ -8,7 +8,7 @@ from datetime import date,datetime,timedelta
 from mysql.connector import(connection)
 import os
 
-cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
 cursor=cnx.cursor()
 
 cursor.execute("CREATE TABLE MemberRecord(Bno int,Mname char(232),MOB varchar(100),Date_of_membership date,ADR char(232))")
@@ -20,7 +20,7 @@ def clrscreen():
 def display():
     try:
          os.system('cls')
-         cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+         cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
          cursor=cnx.cursor()
          query=("SELECT *FROM MemberRecord")
          cursor.execute(query)
@@ -49,7 +49,7 @@ def display():
 import mysql.connector
 def insertData():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("member code:"))
         mname=input("member name:")
@@ -82,7 +82,7 @@ def insertData():
 import mysql.connector                                                           
 def delete_Member():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter member code to be deleted from the member:"))
         Qry=("""DELETE FROM MemberRecord WHERE Bno=%s""")
@@ -108,7 +108,7 @@ import mysql.connector
 def Search_Member():
     try:
         os.system("cls")
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter member Name to be searched from the member:"))
         query=("SELECT * FROM MemberRecord WHERE Bno=%s")
@@ -134,7 +134,7 @@ def Search_Member():
 
 def UpdateMember():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter member code of member to be updated from the member:"))
         query=('SELECT* FROM MemberRecord WHERE Bno=%S')
