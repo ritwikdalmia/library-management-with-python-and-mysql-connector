@@ -4,7 +4,7 @@ from mysql.connector import(connection)
 import os
 import platform
 import mysql.connector
-cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
 cursor=cnx.cursor()
 
 cursor.execute("CREATE TABLE BookRecord(Bno int,Bname char(232),Author char(232),price int,publisher char(232),quantity int,date_of_purchase date)")
@@ -17,7 +17,7 @@ def clrscreen():
 def display():
     try:
         os.system("cls")
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         query=("SELECT * FROM BookRecord")
         cursor.execute(query)
@@ -52,7 +52,7 @@ def display():
 import mysql.connector
 def insertData():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("ENTER BOOK CODE:"))
         bname=input("ENTER BOOK NAME:")
@@ -84,7 +84,7 @@ def insertData():
                                                             #DELETE VALUES
 def deleteBook():
      try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter book code of book to be deleted from the library:"))
         Qry=("""DELETE FROM BookRecord WHERE Bno=%s""")
@@ -110,7 +110,7 @@ def deleteBook():
 def SearchBookRec():
     try:
         os.system("cls")
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter book code of book to be search from the library:"))
         query=("SELECT * FROM BookRecord WHERE Bno=%s")
@@ -135,7 +135,7 @@ def SearchBookRec():
 
 def UpdateBook():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter book code of book to be updated from the library:"))
         query=('SELECT* FROM BookRecord WHERE Bno=%S')
