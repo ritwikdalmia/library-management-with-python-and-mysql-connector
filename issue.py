@@ -3,7 +3,7 @@ from mysql.connector import errorcode
 from datetime import date,datetime,timedelta
 from mysql.connector import(connection)
 import os
-cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
 cursor=cnx.cursor()
 
 cursor.execute("CREATE TABLE issue(Bno int,Date_of_purchase date,date_of_return date)")
@@ -15,7 +15,7 @@ def clrscreen():
 def ShowIssueBooks():
      try:
          os.system('cls')
-         cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+         cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
          cursor=cnx.cursor()
          query=("SELECT * FROM issue")
          cursor.execute(query)
@@ -43,7 +43,7 @@ def ShowIssueBooks():
     
 def issueBook():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("issue code:"))
         print("ENTER DATE OF PURCHASE(YEAR-MONTH-DATE:)")
@@ -69,7 +69,7 @@ def issueBook():
 
 def returnBook():
     try:
-        cnx=mysql.connector.connect(host='localhost',user="root",password="bittoo123!",database='library')
+        cnx=mysql.connector.connect(host='localhost',user="root",password="mysql_password!",database='library')
         cursor=cnx.cursor()
         bno=int(input("enter book code to issue:"))
         Qry=("""DELETE FROM Issue WHERE Bno=%s""")
